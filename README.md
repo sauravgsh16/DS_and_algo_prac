@@ -1,1 +1,1 @@
-# DS_and_algo_prac
+Repo containing solution or implementations of Data Structures and algorithms
