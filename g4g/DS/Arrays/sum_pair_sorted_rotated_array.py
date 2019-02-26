@@ -23,7 +23,6 @@ Strategy:
 import unittest
 
 def pairsInSortedRotated(arr, n, sum):
-
     pivot = findPivot(arr, 0, n-1)
     if pivot == -1:
         left = 0,
@@ -77,7 +76,6 @@ class TestPairRotatedArray(unittest.TestCase):
         arr = [11, 15, 6, 8, 9, 10]
         count = pairsInSortedRotated(arr, len(arr), 35)
         self.assertEqual(count, 0)
-
 
 
 if __name__ == '__main__':
