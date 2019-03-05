@@ -1,0 +1,5 @@
+1) Multiple kth smallest/largest element finding algorithms
+   of time complexity O(n) QuickSort
+   Problems: 3, 4, 5
+2) Mean Median
+   Problems: 10, 11

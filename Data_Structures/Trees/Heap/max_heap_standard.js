@@ -76,3 +76,5 @@ heap.insert(30);
 heap.insert(40);
 heap.insert(20);
 heap.insert(10);
+
+console.log(heap.heap);
