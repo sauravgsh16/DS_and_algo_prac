@@ -3,3 +3,13 @@
    Problems: 3, 4, 5
 2) Mean Median
    Problems: 10, 11
+3) ** Contigious Sub Array -- Did not understand problem statement
+   Problem: 13
+4) Subarray problem. ** (V IMP) ** asked in many interviews
+   a) Prefix sum
+   b) max sum Contigious array (Kadane's algorithm)
+   c) max sum Contigious array -- using prefix sum - O(n) time
+   d) K maximum sums of overlapping contiguous sub-arrays ** IMP - NOT SOLVED
+   Problems: 14, 15
+5) Problem 18, 19 -- DID NOT UNDERSTAND ********
+
