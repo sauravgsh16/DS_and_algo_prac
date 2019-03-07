@@ -45,4 +45,4 @@ def kMax(arr, k):
 
 arr = [4, 1, 1, -1, -3, -5, 6, 2, -6, -2] 
 k = 3
-kMax1(arr, k)
+kMax(arr, k)
