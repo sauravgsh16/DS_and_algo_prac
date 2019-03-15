@@ -26,7 +26,7 @@ def maxSum(arr_a, arr_b):
     for i in range(n):
         # Check if element is present in array B,
         # we reset the max count
-        if arr_a[i] in arr_b: # ALGORITHM improve point (Can be linear or binary)
+        if arr_a[i] in arr_b: # ALGORITHM improvement point (Can be linear or binary)
             max_ending_here = 0
             continue
         

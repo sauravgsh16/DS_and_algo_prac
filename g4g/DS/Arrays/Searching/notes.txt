@@ -1,1 +1,4 @@
 1) **Problem 4: Adjacent elements. Did not understand problem.
+2) Problem 14: Understanding the logic to find if element is present more than n/2 times.
+   Marked with * in the code
+3) VERY IMPORTANT - ALL TECHNIQUES OF FINDING DUPLICATE ELEMENTS IN AN ARRAY
