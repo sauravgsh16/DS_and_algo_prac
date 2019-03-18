@@ -49,19 +49,6 @@ class LinkedList(object):
             cur = cur.next
         return palin
 
-    def get_middle(self):
-        fast = self.head
-        slow = self.head
-        while fast and fast.next:
-            slow = slow.next
-            fast = fast.next.nex363t
-        if fast:
-            mid = slow
-            slow = slow.next
-        else:
-            mid = slow
-        return mid
-
     def reverse_linked_list(self, ref):
         prev = None
         cur = ref
