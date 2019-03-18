@@ -62,7 +62,7 @@ class LinkedList(object):
         counter = 1
         prev = self.head
         current = self.head.next
-        while counter == idx:
+        while counter != idx:
             prev = current
             current = current.next
             counter += 1
