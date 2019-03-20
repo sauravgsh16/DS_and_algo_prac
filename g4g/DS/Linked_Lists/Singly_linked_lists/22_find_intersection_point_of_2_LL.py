@@ -89,9 +89,22 @@ def find_intersection_pt2(first, second):
     # Creating a loop for second
     # Ideally, we cannot use a tail node, and need to keep track of end node
     # So that we can revert it back to original
-    print second
-    second.tail.next = second.head
-    first.print_linked_list()
+    cur = second.head
+    while cur.next:
+        cur = cur.next
+    last = cur
+    cur.next = second.head
+    # Now we need to detect start of loop for the second list
+    fast = first.head
+    slow = first.head
+    while fast and fast.next:
+        fast = fast.next.next
+        slow = slow.next
+        if slow == fast:
+            break
+    print slow.val
+    # Revert back original first Linked List
+    last.next = None
 
 
 n1 = Node('1')
@@ -111,10 +124,14 @@ l1.head.next.next.next.next = n6
 l2 = LinkedList()
 l2.head = n4
 l2.head.next = n5
-
 l1.print_linked_list()
 print '\n'
 l2.print_linked_list()
 print '\n'
+
 find_intersection_pt1(l1, l2)
 find_intersection_pt2(l1, l2)
+
+l1.print_linked_list()
+print '\n'
+l2.print_linked_list()
