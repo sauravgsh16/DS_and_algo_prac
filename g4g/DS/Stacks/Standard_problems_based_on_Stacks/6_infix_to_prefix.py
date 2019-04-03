@@ -1,26 +1,39 @@
-''' Infix to Postfix '''
-
+''' Convert Infix to Prefix '''
+'''
+   1) Reverse the infix expression.
+      **** NOTE : '(' will become ')' and ')' becomes '('
+   2) Obtain postfix expression reversed expression
+   3) Reverse the postfix to obtain infix 
+'''
 
 class Conversion(object):
-    
+
     def __init__(self, exp):
         self.exp = exp
         self.stack = []
         self.precedence = {'+': 1, '-': 1, '*': 2, '/': 2, '^': 3}
 
-    def push(self, operation):
-        self.stack.append(operation)
+    def push(self, val):
+        self.stack.append(val)
 
     def pop(self):
         return self.stack.pop()
 
     def isEmpty(self):
         return len(self.stack) == 0
+    
+    def reverse(self, exp):
+        ''' Conversion of brackets also considered '''
+        new_exp = exp[::-1]
+        for i in range(len(new_exp)):
+            if new_exp[i] == '(':
+                new_exp = new_exp[:i] + ')' + new_exp[i+1:]
+            elif new_exp[i] == ')':
+                new_exp = new_exp[:i] + '(' + new_exp[i+1:]
+        return new_exp
 
     def peek(self):
-        if not self.isEmpty():
-            return self.stack[-1]
-        return None
+        return self.stack[-1]
 
     def isOperand(self, ch):
         return ch.isalpha()
@@ -34,19 +47,18 @@ class Conversion(object):
 
     def infix_to_postfix(self):
         output = ''
-        for i in self.exp:
+        new_exp = self.reverse(self.exp)
+        for i in new_exp:
             if self.isOperand(i):
                 output += i
             elif i == '(':
                 self.push(i)
             elif i == ')':
                 while not self.isEmpty() and self.peek() != '(':
-                    op = self.pop()
-                    output += op
-                if not self.isEmpty and self.peek() != '(':
+                    output += self.pop()
+                if not self.isEmpty() and self.peek() != '(':
                     return -1
-                else:
-                    self.pop()
+                self.pop()
             else:
                 while not self.isEmpty() and self.notGreater(i):
                     output += self.pop()
@@ -55,7 +67,11 @@ class Conversion(object):
             output += self.pop()
         return output
 
+    def infix_to_prefix(self):
+        post = self.infix_to_postfix()
+        return self.reverse(post)
 
-exp = "a+b*(c^d-e)^(f+g*h)-i"
+
+exp = '(a-b/c)*(a/k-l)'
 c = Conversion(exp)
-print c.infix_to_postfix()
+print c.infix_to_prefix()

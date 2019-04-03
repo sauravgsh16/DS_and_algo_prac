@@ -1,15 +1,14 @@
-''' Infix to Postfix '''
-
+''' Convert infix expression to postfix '''
 
 class Conversion(object):
-    
+
     def __init__(self, exp):
         self.exp = exp
-        self.stack = []
         self.precedence = {'+': 1, '-': 1, '*': 2, '/': 2, '^': 3}
+        self.stack = []
 
-    def push(self, operation):
-        self.stack.append(operation)
+    def push(self, op):
+        self.stack.append(op)
 
     def pop(self):
         return self.stack.pop()
@@ -18,9 +17,9 @@ class Conversion(object):
         return len(self.stack) == 0
 
     def peek(self):
-        if not self.isEmpty():
-            return self.stack[-1]
-        return None
+        if self.isEmpty():
+            return None
+        return self.stack[-1]
 
     def isOperand(self, ch):
         return ch.isalpha()
@@ -43,7 +42,7 @@ class Conversion(object):
                 while not self.isEmpty() and self.peek() != '(':
                     op = self.pop()
                     output += op
-                if not self.isEmpty and self.peek() != '(':
+                if not self.isEmpty() and self.peek() != '(':
                     return -1
                 else:
                     self.pop()
