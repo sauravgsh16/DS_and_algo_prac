@@ -1,0 +1,5 @@
+******
+IMPLEMENTATION OF K QUEUES IN A SINGLE ARRAY
+5th problem in Implementation section of Queues
+DONT SKIP 
+******
