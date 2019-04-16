@@ -38,7 +38,7 @@ Thus, we employ two ways to store the values so that these values can be reused.
 1) `Memoization`
 2) `Tabulation`
 
-
+The above methods are discussed in other file.
 
 ### Optimal Substructure
 A given problem has `Optimal substructure` property if optimal solution of the
