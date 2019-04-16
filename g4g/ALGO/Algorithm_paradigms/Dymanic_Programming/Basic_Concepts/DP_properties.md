@@ -22,7 +22,7 @@ def fib(n):
     return fib(n-1) + fib(n-2)
 ```
 For `fib(5)` we have a recursion tree as:
-`
+```
                    fib(5)
               /              \
           fib(4)              fib(3)
@@ -32,7 +32,7 @@ For `fib(5)` we have a recursion tree as:
  fib(2) fib(1) fib(1) fib(0) fib(1) fib(0)
  /    \
 fib(1) fib(0)
-`
+```
 from above we see that fib(3) is called 2 times, and so on
 Thus, we employ two ways to store the values so that these values can be reused.
 1) `Memoization`
