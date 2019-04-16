@@ -1,10 +1,10 @@
-## TABULATION AND MEMOIZATION
+# TABULATION AND MEMOIZATION
 
 Two patterns to solve DP
 1) `Tabulation` -- Bottom Up
 2) `Memoization` -- Top Down
 
-# Tabluation or Bottom up
+### Tabluation or Bottom up
 
 This is the process where we start from the bottom state and calculate the
 final result.
@@ -22,7 +22,7 @@ def fib(n):
     return mem[n]
 ```
 
-# Memoization or Top Down
+### Memoization or Top Down
 
 Here we start our journey from the top most destination state and compute its
 answer by taking into account the values of states that can reach the 
