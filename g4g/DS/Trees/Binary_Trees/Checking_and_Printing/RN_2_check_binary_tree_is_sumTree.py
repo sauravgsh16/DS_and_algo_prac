@@ -57,11 +57,11 @@ def is_leaf(node):
         return True
     return False
 
-def is_subtree_efficient(node):
+def is_sumtree_efficient(node):
     if not node or is_leaf(node):
         return True
 
-    if is_subtree_efficient(node.left) and is_subtree_efficient(node.right):
+    if is_sumtree_efficient(node.left) and is_sumtree_efficient(node.right):
         # Get sum of nodes in the left subtree
         if node.left == None:
             ls = 0
@@ -90,4 +90,4 @@ root.left.right = Node(6)
 root.right.right = Node(3)
 
 print is_sumtree(root)
-print is_subtree_efficient(root)
+print is_sumtree_efficient(root)
