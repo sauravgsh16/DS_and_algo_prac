@@ -46,7 +46,7 @@ root.left.right = Node(5)
 root.left.right.right = Node(15) 
 root.right.left = Node(6) 
 root.right.right = Node(7) 
-root.right.left.right = Node(8) 
+root.right.left.right = Node(8)
   
 node1 = root.left.right 
 node2 = root.right.right  
