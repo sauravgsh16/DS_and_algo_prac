@@ -70,16 +70,18 @@ def find_LCA_alt(root, n1, n2):
     
     return left_lca if left_lca else right_lca
 
-
-root = Node(1)
+# 4 2 3 1 7 6
+root = Node(4)
 root.left = Node(2)
-root.right = Node(3)
-root.left.left = Node(4)
-root.left.right = Node(5)
+root.right = Node(7)
+root.left.left = Node(1)
+root.left.right = Node(3) #
 root.right.left = Node(6)
-root.right.right = Node(7)
+# root.right.right = Node(7)
 
-print "LCA(4, 5) = %d" % find_LCA_alt(root, 4, 5,).val
+print "LCA(%d, %d) = %d" % (1, 7, find_LCA(root, 1, 7,))
+'''
 print "LCA(4, 6) = %d" % find_LCA_alt(root, 4, 6).val
 print "LCA(3, 4) = %d" % find_LCA_alt(root, 3, 4).val
 print "LCA(2, 4) = %d" % find_LCA_alt(root, 2, 4).val
+'''

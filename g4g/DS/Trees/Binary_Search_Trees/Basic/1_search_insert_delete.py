@@ -35,8 +35,8 @@ class BinarySearchTree(object):
                     self._insert(root.left, node)
 
 
-def search(key):
-    node = search(root, key)
+def search(root, key):
+    node = _search(root, key)
     if not node:
         return None
     return node.val
@@ -95,22 +95,24 @@ def inorder(root):
 
 
 bt = BinarySearchTree()
-bt.insert(50)
-bt.insert(30)
-bt.insert(20)
-bt.insert(40)
-bt.insert(70)
-bt.insert(60)
-bt.insert(80)
+# 4 2 3 1 7 6
+bt.insert(4)
+bt.insert(2)
+bt.insert(3)
+bt.insert(1)
+bt.insert(7)
+bt.insert(6)
 
 inorder(bt.root)
 print '\n'
-bt.delete_node(20)
+'''
+delete_node(bt.root, 20)
 inorder(bt.root)
 print '\n'
-bt.delete_node(30)
+delete_node(bt.root, 30)
 inorder(bt.root)
 print '\n'
-bt.delete_node(50)
+delete_node(bt.root, 50)
 inorder(bt.root)
 print '\n'
+'''
