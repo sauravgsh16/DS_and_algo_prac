@@ -11,3 +11,4 @@
     4) Merge two BSTs with limited extra space: Problem no: 18
 ### Checking and Searching
     1) Maximum Unique Element in every subarray of size K: Problem no: 18
+    2) Problems: 34 - 42. IMP*
