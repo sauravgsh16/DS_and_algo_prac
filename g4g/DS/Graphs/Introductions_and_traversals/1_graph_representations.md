@@ -77,6 +77,7 @@ This representation can alos be used to represent a weighted graph.
 The weights of edges can be represented as lists of pairs.
 Following is adjacency list representation of the below graph
 
+```
  0---1
  |  /| \ 2
  | / | /
@@ -87,7 +88,7 @@ Following is adjacency list representation of the below graph
 2 --> 1 --> 3
 3 --> 1 --> 4 --> 2
 4 --> 3 --> 0 --> 1
-
+```
 ```py
 
 ''' Implementation of a graph using a adjacency list '''
