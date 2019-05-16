@@ -29,15 +29,21 @@ class BinaryMinHeap(object):
 
     def _is_leaf(self, pos):
         ''' Need to check if the leaf node lies in the second half of the arr '''
-        if pos >= ((self.size - 1) // 2) and pos <= self.size - 1:
+        if pos > ((self.size - 1) / 2) and pos <= self.size - 1:
             return True
         return False
 
     def _left_child(self, pos):
-        return 2 * pos + 1
+        left = 2 * pos + 1
+        if left <= self.size - 1:
+            return left
+        return False
 
     def _right_child(self, pos):
-        return 2 * pos + 2
+        right = 2 * pos + 2
+        if right <= self.size - 1:
+            return right
+        return False
 
     def _heapify(self, pos):
         if self._is_leaf(pos):
@@ -45,17 +51,23 @@ class BinaryMinHeap(object):
         left = self._left_child(pos)
         right = self._right_child(pos)
 
-        if self.heap[pos] > self.heap[left] or self.heap[pos] > self.heap[right]:
-            if self.heap[left] < self.heap[right] or not self.heap[right]:
+        if left and right:
+            if self.heap[pos] > self.heap[left] or self.heap[pos] > self.heap[right]:
+                if self.heap[left] < self.heap[right] or not self.heap[right]:
+                    self._swap(pos, left)
+                    self._heapify(left)
+                else:
+                    self._swap(pos, right)
+                    self._heapify(right)
+        elif left:
+            if self.heap[pos] > self.heap[left]:
                 self._swap(pos, left)
                 self._heapify(left)
-            else:
-                self._swap(pos, right)
-                self._heapify(right)
 
     def extract_min(self):
         self._swap(0, self.size-1)
         val = self.heap.pop()
+        self.size -= 1
         self._heapify(0)
         return val
 
@@ -68,8 +80,9 @@ bh.insert(7)
 bh.insert(3)
 bh.insert(15)
 
-print bh.heap
-
-print bh.extract_min()
 
 print bh.heap
+for i in range(6):
+    print bh.extract_min()
+
+#print bh.heap
