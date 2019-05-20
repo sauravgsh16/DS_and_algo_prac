@@ -35,7 +35,8 @@ class Graph_Inc(object):
 # Thus we must call the dfs_util for every node.
 
 class Graph_Complete(object):
-    def __init__(self):
+    def __init__(self, vertices):
+        self.V = vertices
         self.graph = defaultdict(list)
 
     def add_edge(self, src, dest):
@@ -50,19 +51,20 @@ class Graph_Complete(object):
                 self.dfs_util(i, visited)
 
     def dfs(self):
-        visited = [False] * len(self.graph)
+        visited = [False] * self.V
 
-        for i in range(len(self.graph)):
+        for i in range(self.V):
             if visited[i] == False:
                 self.dfs_util(i, visited)
 
 
-g = Graph_Complete()
+g = Graph_Complete(5)
+
 g.add_edge(0, 1)
 g.add_edge(0, 2)
 g.add_edge(1, 2)
-g.add_edge(2, 0)
+g.add_edge(1, 3)
+g.add_edge(1, 4)
 g.add_edge(2, 3)
-g.add_edge(3, 3)
-
+g.add_edge(3, 4)
 g.dfs()
