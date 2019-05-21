@@ -4,3 +4,5 @@
 3) Construct binary palindrome by repeated appending and trimming: Problem no: 19
 5) Maximum number of edges to be added to a tree so that it stays a Bipartite graph: Problem no: 25
 
+#### Graph Cycles:
+1) Disjoint Sets - Union and Find (complete section remain)
