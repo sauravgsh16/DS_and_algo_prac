@@ -1,6 +1,5 @@
 ''' All topological sort '''
 
-
 from collections import defaultdict
 
 class Graph(object):
@@ -18,9 +17,9 @@ class Graph(object):
 
         for i in range(self.V):
             if visited[i] == False and self.indegree[i] == 0:
+
                 visited[i] = True
                 stack.append(i)
-
                 for j in self.graph[i]:
                     self.indegree[j] -= 1
                 
@@ -28,8 +27,8 @@ class Graph(object):
 
                 for j in self.graph[i]:
                     self.indegree[j] += 1
-                stack.pop()
                 visited[i] = False
+                stack.pop()
 
                 flag = True
         
@@ -38,10 +37,13 @@ class Graph(object):
                 print i,
             print
 
-    def topological_sorts_all(self):
+
+    def topological_sort_all(self):
         visited = [False] * self.V
         stack = []
+
         self.topological_sort_all_util(visited, stack)
+
 
 g = Graph(6)
 g.add_edge(5, 2)
@@ -51,5 +53,4 @@ g.add_edge(4, 1)
 g.add_edge(2, 3)
 g.add_edge(3, 1)
 
-
-g.topological_sorts_all()
+g.topological_sort_all()

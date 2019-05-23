@@ -29,7 +29,7 @@
 '''
    The Idea is to form a directed graph of array elements using given set of
    rules. While forming graph we don't make self loops.
-   The we just check if there are cycles present in a directed graph.
+   Then we just check if there are cycles present in a directed graph.
 '''
 
 def create_graph(arr, n):
