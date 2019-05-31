@@ -33,7 +33,7 @@ def find_element(arr, low, high):
     if high == low + 1 and arr[low] >= arr[high]:
         return arr[low]
 
-    # If there are two elements and second is greater then 
+    # If there are two elements and second is greater, then 
     # the second element is maximum
     if high == low + 1 and arr[high] > arr[low]:
         return arr[high]

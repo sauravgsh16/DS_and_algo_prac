@@ -7,10 +7,8 @@
 
 def find_pivot(arr, low, high):
     # base cases
-    if low > high:
+    if low >= high:
         return -1
-    if low == high:
-        return low
     
     mid = int((low + high) / 2)
 
