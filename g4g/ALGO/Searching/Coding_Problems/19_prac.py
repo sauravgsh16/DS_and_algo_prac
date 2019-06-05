@@ -79,7 +79,7 @@ class MinHeap(object):
         self._heapify(0)
 
 
-def find_kth_smallest(arr, k):
+def find_kth_smallest(arr, n, k):
     # Insert first row in MinHeap
     minHeap = MinHeap()
     for cn, val in enumerate(arr[0]):
@@ -114,9 +114,23 @@ arr2 = [
     [36, 78, 87, 94]
 ]
 
-print find_kth_smallest(arr2, 3)
+# find_kth_smallest(arr, 15)
 
 #1
 #4
 #16 28 60 64 22 41 63 91 27 50 87 93 36 78 87 94 
 #3
+
+if __name__ == '__main__':
+    t = int(input())
+    for i in range(t):
+        n = list(map(int, input().strip().split()))
+        arr = list(map(int, input().strip().split()))
+        k = int(input())
+        matrix = [[0 for i in range(n[0])]for j in range(n[0])]
+        c=0
+        for i in range(n[0]):
+            for j in range(n[0]):
+                matrix[i][j] = arr[c]
+                c+=1
+        print(find_kth_smallest(matrix, n[0], k))

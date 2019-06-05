@@ -25,7 +25,7 @@ def rotated_binary_search(arr, low, high, key):
         return mid
     
     if arr[low] <= arr[mid]:
-        # This is array is sorted till mid
+        # That is array is sorted till mid
 
         if arr[low] <= key and key <= arr[mid]:
             return rotated_binary_search(arr, low, mid-1, key)
