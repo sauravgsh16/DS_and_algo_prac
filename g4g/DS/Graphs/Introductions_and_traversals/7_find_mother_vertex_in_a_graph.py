@@ -26,8 +26,8 @@
    In a graph of strongly connected components, mother vertices are always
    vertices of source component in component graph.
 
-   The idea is based on below fact:**
-   If there is exist mother vertex (or vertices), then one of the mother vertices
+   ****The idea is based on below fact:****
+   If there exists, a mother vertex (or vertices), then one of the mother vertices
    is the last finished vertex in DFS. (or a mother vertex has the maximum
    finish time in DFS traversal)
 
@@ -42,13 +42,13 @@
    1) Recursive DFS call is made for u before v. If an edge u --> v exists, then
       v must have finished before u because v is reachable through u and a vertex
       finished after all its decendants
-   2) Recursive DFS call is made for v before u. Yf an edge u --> v exists, then
+   2) Recursive DFS call is made for v before u. Tf an edge u --> v exists, then
       either v must finish before u, (which contradicts our assumption that v
       is finished at the end) OR u should be reachable from v (which means u is
       another mother vertex).
 
    ALGORITHM **
-   1) Do DFS traversak of the given graph. While doing traversal keep track of
+   1) Do DFS traversal of the given graph. While doing traversal keep track of
       last finished vertex 'v'. This step takes O(V + E) time.
    2) If there exists mother vertex (or vertices), then v must be one(or one of
       them). Check if v is a mother vertex by doing DFS/BFS from v. This step
