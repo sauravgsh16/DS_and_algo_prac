@@ -4,7 +4,6 @@ IMP ****
 All files with RN at the beginning indicates that it need revision
 **********
 
-Good Resource
 API
 	1) API gateway
 	2) Microservice architecture
@@ -25,7 +24,7 @@ gRPC - GO microservices
 	1) https://medium.com/@amsokol.com/tutorial-how-to-develop-go-grpc-microservice-with-http-rest-endpoint-middleware-kubernetes-daebb36a97e9
         2) https://github.com/grpc-ecosystem/awesome-grpc#res-tuts
 	3) https://ewanvalentine.io/
-	4) https://github.com/raycad/go-microservices
+	4) https://callistaenterprise.se/blogg/teknik/2017/02/17/go-blog-series-part1/
 
 
 GraphQL
@@ -38,6 +37,7 @@ Micro-service project
 	1) https://github.com/harlow/go-micro-services
 	2) https://github.com/hailocab/go-geoindex
 	3) https://github.com/miguelgrinberg?utf8=%E2%9C%93&tab=repositories&q=microfla&type=&language=
+	4) https://github.com/raycad/go-microservices
 
 
 Python
